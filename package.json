@@ -1,0 +1,35 @@
+{
+  "name": "seven-ten",
+  "version": "1.0.0",
+  "description": "React client for Seven-Ten",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-register --require ./spec/helper.js spec/*.spec.js"
+  },
+  "author": "Michael Parrish",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "~6.16.0",
+    "babel-core": "~6.16.0",
+    "babel-loader": "~6.2.5",
+    "babel-preset-es2015": "~6.16.0",
+    "babel-preset-react": "~6.16.0",
+    "babel-register": "~6.16.0",
+    "chai": "~3.5.0",
+    "chai-spies": "~0.7.1",
+    "enzyme": "~2.4.1",
+    "jsdom": "~9.5.0",
+    "mocha": "~3.1.0",
+    "react-addons-test-utils": "~0.14.1",
+    "webpack": "~1.13.2"
+  },
+  "dependencies": {
+    "devour-client": "~1.3.9",
+    "react": "~0.14.1",
+    "react-dom": "~0.14.1"
+  },
+  "engines": {
+    "node": "^4.6.0",
+    "npm": "^2.15.9"
+  }
+}
