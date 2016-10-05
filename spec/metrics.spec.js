@@ -1,4 +1,4 @@
-import {ClassificationCreatedMetric, ClassifierVisitedMetric} from '../lib/metrics';
+import { ClassificationCreatedMetric, ClassifierVisitedMetric } from '../lib/metrics';
 import Client from '../lib/client';
 
 describe('Metrics', () => {
@@ -12,11 +12,11 @@ describe('Metrics', () => {
   beforeEach(() => {
     clientCreate = spy();
     Client.current();
-    Client._current.create = clientCreate;
+    Client.current_instance.create = clientCreate;
   });
 
   afterEach(() => {
-    Client._current = undefined;
+    Client.current_instance = undefined;
   });
 
   describe('ClassificationCreatedMetric', () => {

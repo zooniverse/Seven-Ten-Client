@@ -1,7 +1,7 @@
 import React from 'react';
 import chai from 'chai';
 import spy from 'chai-spies';
-import {mount, shallow} from 'enzyme';
+import { mount, shallow } from 'enzyme';
 const jsdom = require('jsdom').jsdom;
 
 chai.use(spy);

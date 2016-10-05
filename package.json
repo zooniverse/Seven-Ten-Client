@@ -4,7 +4,8 @@
   "description": "React client for Seven-Ten",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-register --require ./spec/helper.js spec/*.spec.js"
+    "test": "mocha --compilers js:babel-register --require ./spec/helper.js spec/*.spec.js",
+    "lint": "eslint lib"
   },
   "author": "Michael Parrish",
   "license": "MIT",
@@ -18,6 +19,11 @@
     "chai": "~3.5.0",
     "chai-spies": "~0.7.1",
     "enzyme": "~2.4.1",
+    "eslint": "~3.7.1",
+    "eslint-config-airbnb": "~12.0.0",
+    "eslint-plugin-import": "~2.0.0",
+    "eslint-plugin-jsx-a11y": "~2.2.2",
+    "eslint-plugin-react": "~6.3.0",
     "jsdom": "~9.5.0",
     "mocha": "~3.1.0",
     "react-addons-test-utils": "~0.14.1",

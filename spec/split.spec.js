@@ -1,6 +1,6 @@
 import Split from '../lib/split'
 import Client from '../lib/client';
-import {ClassificationCreatedMetric, ClassifierVisitedMetric} from '../lib/metrics';
+import { ClassificationCreatedMetric, ClassifierVisitedMetric } from '../lib/metrics';
 import serverResponse from './split_user_variants';
 
 describe('Split', () => {
@@ -17,12 +17,12 @@ describe('Split', () => {
     Split.splits = { };
     clientFind = spy(splitFinder);
     Client.current();
-    Client._current.findAll = clientFind;
+    Client.current_instance.findAll = clientFind;
   });
 
   afterEach(() => {
     Split.splits = { };
-    Client._current = undefined;
+    Client.current_instance = undefined;
   });
 
   describe('.load', () => {

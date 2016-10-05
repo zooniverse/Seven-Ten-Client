@@ -6,7 +6,7 @@ const VisibilitySplit = React.createClass({
     let hasElementKey = split && this.props.elementKey in split.variant.value;
     let isShown = split && split.variant.value[this.props.elementKey];
 
-    if(!split || isShown || !hasElementKey) {
+    if (!split || isShown || !hasElementKey) {
       return this.props.children;
     } else {
       return <span></span>;

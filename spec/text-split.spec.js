@@ -5,7 +5,7 @@ describe('<TextSplit />', () => {
     props.splitKey = props.splitKey || 'test';
     props.textKey = props.textKey || 'example';
     return(
-      shallow(<TextSplit {...props} />)
+      shallow(<TextSplit {...props } />)
     );
   };
 
@@ -23,7 +23,7 @@ describe('<TextSplit />', () => {
 
   context('without a split', () => {
     it('should render the default', () => {
-      const wrapper = textSplit({default: 'works'});
+      const wrapper = textSplit({ default: 'works'});
       expect(wrapper.text()).to.equal('works');
     });
   });
@@ -41,7 +41,7 @@ describe('<TextSplit />', () => {
       };
 
       it('should render the default', () => {
-        const wrapper = textSplit({default: 'works', splits});
+        const wrapper = textSplit({ default: 'works', splits });
         expect(wrapper.text()).to.equal('works');
       });
     });
@@ -59,14 +59,14 @@ describe('<TextSplit />', () => {
 
       context('without the specified text key', () => {
         it('should render the default', () => {
-          const wrapper = textSplit({default: 'works', textKey: 'unrelated', splits});
+          const wrapper = textSplit({ default: 'works', textKey: 'unrelated', splits });
           expect(wrapper.text()).to.equal('works');
         });
       });
 
       context('with the specified text key', () => {
         it('should render the variant text', () => {
-          const wrapper = textSplit({default: 'works', splits});
+          const wrapper = textSplit({ default: 'works', splits });
           expect(wrapper.text()).to.equal('split text');
         });
       });

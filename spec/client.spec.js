@@ -6,16 +6,16 @@ describe('Client', () => {
 
   describe('.current', () => {
     beforeEach( () => {
-      Client._current = undefined;
+      Client.current_instance = undefined;
     });
 
     afterEach( () => {
-      Client._current = undefined;
+      Client.current_instance = undefined;
     });
 
     context('when already initialized', () => {
       it('should return the current instance', () => {
-        Client._current = 'already initialized';
+        Client.current_instance = 'already initialized';
         expect(Client.current()).to.equal('already initialized');
       });
     });
@@ -33,17 +33,17 @@ describe('Client', () => {
 
   describe('#constructor', () => {
     it('should set the host', () => {
-      const client = new Client({host});
+      const client = new Client({ host });
       expect(client.apiUrl).to.equal(host);
     });
 
     it('should set the headers', () => {
-      const client = new Client({host, headers});
+      const client = new Client({ host, headers });
       expect(client.headers).to.equal(headers);
     });
 
     it('should define types', () => {
-      const client = new Client({host, headers});
+      const client = new Client({ host, headers });
       const types = Object.keys(client.models);
       expect(types).to.eql(
         ['project', 'split', 'variant', 'split_user_variant', 'metric']

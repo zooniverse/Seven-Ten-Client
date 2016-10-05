@@ -5,7 +5,7 @@ describe('<VisibilitySplit />', () => {
     props.splitKey = props.splitKey || 'test';
     props.elementKey = props.elementKey || 'example';
     return(shallow(
-      <VisibilitySplit {...props}>
+      <VisibilitySplit {...props }>
         <p>children</p>
       </VisibilitySplit>
     ));
@@ -32,7 +32,7 @@ describe('<VisibilitySplit />', () => {
       };
 
       it('should render the children', () => {
-        const wrapper = visibilitySplit({splits});
+        const wrapper = visibilitySplit({ splits });
         expect(wrapper.text()).to.equal('children');
       });
     });
@@ -51,7 +51,7 @@ describe('<VisibilitySplit />', () => {
 
       context('without the specified element key', () => {
         it('should render the children', () => {
-          const wrapper = visibilitySplit({elementKey: 'unrelated', splits});
+          const wrapper = visibilitySplit({ elementKey: 'unrelated', splits });
           expect(wrapper.text()).to.equal('children');
         });
       });
@@ -59,14 +59,14 @@ describe('<VisibilitySplit />', () => {
       context('with the specified element key', () => {
         context('when the element is visible', () => {
           it('should render the children', () => {
-            const wrapper = visibilitySplit({elementKey: 'test1', splits});
+            const wrapper = visibilitySplit({ elementKey: 'test1', splits });
             expect(wrapper.text()).to.equal('children');
           });
         });
 
         context('when the element is not visible', () => {
           it('should not render the children', () => {
-            const wrapper = visibilitySplit({elementKey: 'test2', splits});
+            const wrapper = visibilitySplit({ elementKey: 'test2', splits });
             expect(wrapper.children().isEmpty()).to.equal(true);
           });
         });
