@@ -3,8 +3,7 @@ import Client from '../lib/client';
 
 describe('Metrics', () => {
   const split = {
-    id: '123',
-    key: 'test'
+    id: '123'
   };
 
   let clientCreate = spy();
@@ -28,7 +27,7 @@ describe('Metrics', () => {
       it('should create the metric', () => {
         ClassificationCreatedMetric.create(split, classification);
         expect(clientCreate).to.have.been.called.once().with({
-          key: 'test',
+          key: 'classification_created',
           value: {
             classification_id: '456'
           },
@@ -43,7 +42,7 @@ describe('Metrics', () => {
       it('should create the metric', () => {
         ClassifierVisitedMetric.create(split);
         expect(clientCreate).to.have.been.called.once().with({
-          key: 'test',
+          key: 'classifier_visited',
           value: {},
           split_user_variant_id: '123'
         });
