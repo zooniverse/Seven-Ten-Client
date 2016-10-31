@@ -1,5 +1,5 @@
-import { ClassificationCreatedMetric, ClassifierVisitedMetric } from '../lib/metrics';
-import Client from '../lib/client';
+import { ClassificationCreatedMetric, ClassifierVisitedMetric } from '../src/metrics';
+import Client from '../src/client';
 
 describe('Metrics', () => {
   const split = {

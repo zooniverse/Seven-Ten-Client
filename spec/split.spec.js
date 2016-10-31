@@ -1,6 +1,6 @@
-import Split from '../lib/split'
-import Client from '../lib/client';
-import { ClassificationCreatedMetric, ClassifierVisitedMetric } from '../lib/metrics';
+import Split from '../src/split'
+import Client from '../src/client';
+import { ClassificationCreatedMetric, ClassifierVisitedMetric } from '../src/metrics';
 import serverResponse from './split_user_variants';
 
 describe('Split', () => {

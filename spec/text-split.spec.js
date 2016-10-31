@@ -1,4 +1,4 @@
-import TextSplit from '../lib/text-split';
+import TextSplit from '../src/text-split';
 
 describe('<TextSplit />', () => {
   const textSplit = (props = { }) => {

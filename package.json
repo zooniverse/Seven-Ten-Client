@@ -5,7 +5,11 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha --compilers js:babel-register --require ./spec/helper.js spec/*.spec.js",
-    "lint": "eslint lib"
+    "build": "babel src --out-dir lib",
+    "lint": "eslint src",
+    "preversion": "npm test",
+    "version": "npm run build",
+    "postversion": "git push && git push --tags"
   },
   "author": "Michael Parrish",
   "license": "MIT",

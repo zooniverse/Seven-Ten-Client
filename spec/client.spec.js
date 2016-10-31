@@ -1,4 +1,4 @@
-import Client from '../lib/client';
+import Client from '../src/client';
 
 describe('Client', () => {
   const host = 'http://example.com';
