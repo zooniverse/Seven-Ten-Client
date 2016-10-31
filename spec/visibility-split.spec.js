@@ -1,4 +1,4 @@
-import VisibilitySplit from '../lib/visibility-split';
+import VisibilitySplit from '../src/visibility-split';
 
 describe('<VisibilitySplit />', () => {
   const visibilitySplit = (props = { }) => {
