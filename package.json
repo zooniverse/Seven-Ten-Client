@@ -9,7 +9,7 @@
     "lint": "eslint src",
     "preversion": "npm test",
     "version": "npm run build",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags && npm publish"
   },
   "author": "Michael Parrish",
   "license": "MIT",
