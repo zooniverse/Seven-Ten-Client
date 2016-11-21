@@ -29,6 +29,8 @@ class Client extends JsonApi {
       key: '',
       state: '',
       metric_types: [],
+      starts_at: '',
+      ends_at: '',
       project: {
         jsonApi: 'hasOne',
         type: 'project'
@@ -42,6 +44,7 @@ class Client extends JsonApi {
     this.define('variant', {
       name: '',
       value: { },
+      weight: '',
       split: {
         jsonApi: 'hasOne',
         type: 'split'
@@ -63,6 +66,15 @@ class Client extends JsonApi {
       key: '',
       value: { },
       split_user_variant_id: ''
+    });
+
+    this.define('data_request', {
+      state: '',
+      url: '',
+      split: {
+        jsonApi: 'hasOne',
+        type: 'split'
+      }
     });
   }
 }

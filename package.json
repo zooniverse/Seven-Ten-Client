@@ -1,6 +1,6 @@
 {
   "name": "seven-ten",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "React client for Seven-Ten",
   "main": "lib/index.js",
   "scripts": {

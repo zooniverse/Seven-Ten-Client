@@ -46,7 +46,8 @@ describe('Client', () => {
       const client = new Client({ host, headers });
       const types = Object.keys(client.models);
       expect(types).to.eql(
-        ['project', 'split', 'variant', 'split_user_variant', 'metric']
+        ['project', 'split', 'variant', 'split_user_variant', 'metric',
+        'data_request']
       );
     });
   });
