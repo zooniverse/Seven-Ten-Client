@@ -1,6 +1,6 @@
 {
   "name": "seven-ten",
-  "version": "2.0.3",
+  "version": "3.0.0",
   "description": "React client for Seven-Ten",
   "main": "lib/index.js",
   "scripts": {
@@ -39,7 +39,7 @@
     "react-dom": "~0.14.1"
   },
   "engines": {
-    "node": "^4.6.0",
-    "npm": "^2.15.9"
+    "node": "^6.9.1",
+    "npm": "^3.10.8"
   }
 }
