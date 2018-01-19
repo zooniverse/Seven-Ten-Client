@@ -1,23 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const VisibilitySplit = React.createClass({
-  render() {
-    let split = this.props.splits && this.props.splits[this.props.splitKey];
-    let hasElementKey = split && this.props.elementKey in split.variant.value;
-    let isShown = split && split.variant.value[this.props.elementKey];
+function VisibilitySplit(props) {
+  const split = props.splits && props.splits[props.splitKey];
+  const hasElementKey = split && props.elementKey in split.variant.value;
+  const isShown = split && split.variant.value[props.elementKey];
 
-    if (!split || isShown || !hasElementKey) {
-      return this.props.children;
-    } else {
-      return <span></span>;
-    }
+  if (!split || isShown || !hasElementKey) {
+    return props.children;
+  } else {
+    return <span />;
   }
-});
+};
 
 VisibilitySplit.propTypes = {
-  splits: React.PropTypes.object,
-  splitKey: React.PropTypes.string.isRequired,
-  elementKey: React.PropTypes.string.isRequired
+  children: PropTypes.node,
+  splits: PropTypes.object,
+  splitKey: PropTypes.string.isRequired,
+  elementKey: PropTypes.string.isRequired
 };
 
 export default VisibilitySplit;

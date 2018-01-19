@@ -1,22 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const TextSplit = React.createClass({
-  render() {
-    let split = this.props.splits && this.props.splits[this.props.splitKey];
-    let splitText = split && split.variant.value[this.props.textKey];
-    return React.createElement(
-      this.props.elementType,
-      { },
-      splitText || this.props.default
-    );
-  }
-});
+function TextSplit(props) {
+  const split = props.splits && props.splits[props.splitKey];
+  const splitText = split && split.variant.value[props.textKey];
+  return React.createElement(
+    props.elementType,
+    { },
+    splitText || props.default
+  );
+}
 
 TextSplit.propTypes = {
-  splits: React.PropTypes.object,
-  splitKey: React.PropTypes.string.isRequired,
-  textKey: React.PropTypes.string.isRequired,
-  elementType: React.PropTypes.string
+  splits: PropTypes.object,
+  splitKey: PropTypes.string.isRequired,
+  textKey: PropTypes.string.isRequired,
+  elementType: PropTypes.string
 };
 
 TextSplit.defaultProps = {
