@@ -13,6 +13,10 @@
   },
   "author": "Michael Parrish",
   "license": "MIT",
+  "peerDependencies": {
+    "react": ">= 15.6",
+    "react-dom": ">= 15.6"
+  },
   "devDependencies": {
     "babel-cli": "~6.16.0",
     "babel-core": "~6.16.0",
