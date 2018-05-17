@@ -13,6 +13,10 @@
   },
   "author": "Michael Parrish",
   "license": "MIT",
+  "peerDependencies": {
+    "react": ">= 15.6",
+    "react-dom": ">= 15.6"
+  },
   "devDependencies": {
     "babel-cli": "~6.16.0",
     "babel-core": "~6.16.0",
@@ -30,14 +34,14 @@
     "eslint-plugin-react": "~6.3.0",
     "jsdom": "~9.5.0",
     "mocha": "~3.1.0",
+    "prop-types": "~15.6.0",
+    "react": "~15.6",
+    "react-dom": "~15.6",
     "react-test-renderer": "~15.6",
     "webpack": "~1.13.2"
   },
   "dependencies": {
-    "devour-client": "~1.3.9",
-    "prop-types": "~15.6.0",
-    "react": "~15.6",
-    "react-dom": "~15.6"
+    "devour-client": "~1.3.9"
   },
   "engines": {
     "node": "^6.9.1",
