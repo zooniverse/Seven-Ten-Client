@@ -4,14 +4,12 @@ import { ClassificationCreatedMetric, ClassifierVisitedMetric } from './metrics'
 class Split {
   static load(slug) {
     this.clear();
-    return Client.current().findAll('split_user_variant', { filter: { 'projects.slug': slug }}).then(splitVariants =>
-      splitVariants.map((splitVariant) => {
+    return Client.current().findAll('split_user_variant', { filter: { 'projects.slug': slug }})
+      .then(splitVariants => splitVariants.map((splitVariant) => {
         const split = new Split(splitVariant);
         this.splits[split.key] = split;
-      })
-    ).then(() =>
-      this.splits
-    );
+      }))
+      .then(() => this.splits);
   }
 
   static clear() {
@@ -19,21 +17,22 @@ class Split {
   }
 
   static classificationCreated(classification) {
-    for (const key of Object.keys(this.splits)) {
-      this.splits[key].classificationCreated(classification);
-    }
+    Object.keys(this.splits).forEach((splitKey) => {
+      this.splits[splitKey].classificationCreated(classification);
+    });
   }
 
   static classifierVisited() {
-    for (const key of Object.keys(this.splits)) {
-      this.splits[key].classifierVisited();
-    }
+    Object.keys(this.splits).forEach((splitKey) => {
+      this.splits[splitKey].classifierVisited();
+    });
   }
 
   constructor(splitVariant) {
-    for (const key of Object.keys(splitVariant.split)) {
-      this[key] = splitVariant.split[key];
-    }
+    Object.keys(splitVariant.split).forEach((splitKey) => {
+      this[splitKey] = splitVariant.split[splitKey];
+    });
+
     this.id = splitVariant.id;
     this.variant = splitVariant.variant;
     this.metricTypes = { };

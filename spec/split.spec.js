@@ -28,7 +28,7 @@ describe('Split', () => {
   describe('.load', () => {
     it('should request the splits', () => {
       Split.load('project/slug');
-      expect(clientFind).to.have.been.called.once().with({
+      expect(clientFind).to.have.been.called.once.with({
         filter: {'projects.slug': 'project/slug'}
       });
     });
@@ -85,14 +85,14 @@ describe('Split', () => {
     describe('.classificationCreated', () => {
       it('should dispatch the event', () => {
         Split.classificationCreated();
-        expect(splitSpy.classificationCreated).to.have.been.called.once();
+        expect(splitSpy.classificationCreated).to.have.been.called.once;
       });
     });
 
     describe('.classifierVisited', () => {
       it('should dispatch the event', () => {
         Split.classifierVisited();
-        expect(splitSpy.classifierVisited).to.have.been.called.once();
+        expect(splitSpy.classifierVisited).to.have.been.called.once;
       });
     });
   });
@@ -136,7 +136,7 @@ describe('Split', () => {
       it('should create the metric', () => {
         split.metricTypes.classification_created = true;
         split.classificationCreated(classification);
-        expect(ClassificationCreatedMetric.create).to.have.been.called.once().with(classification);
+        expect(ClassificationCreatedMetric.create).to.have.been.called.once.with(classification);
       });
     });
 
@@ -164,7 +164,7 @@ describe('Split', () => {
       it('should create the metric', () => {
         split.metricTypes.classifier_visited = true;
         split.classifierVisited();
-        expect(ClassifierVisitedMetric.create).to.have.been.called.once();
+        expect(ClassifierVisitedMetric.create).to.have.been.called.once;
       });
     });
 

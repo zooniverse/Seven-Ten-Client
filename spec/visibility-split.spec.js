@@ -67,7 +67,7 @@ describe('<VisibilitySplit />', () => {
         context('when the element is not visible', () => {
           it('should not render the children', () => {
             const wrapper = visibilitySplit({ elementKey: 'test2', splits });
-            expect(wrapper.children().isEmpty()).to.equal(true);
+            expect(wrapper.children().exists()).to.equal(false);
           });
         });
       });
