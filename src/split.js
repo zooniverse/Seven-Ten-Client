@@ -4,8 +4,9 @@ import { ClassificationCreatedMetric, ClassifierVisitedMetric } from './metrics'
 class Split {
   static load(slug) {
     this.clear();
-    return Client.current().findAll('split_user_variant', { filter: { 'projects.slug': slug }})
-      .then(splitVariants => splitVariants.map((splitVariant) => {
+    return Client.current().findAll('split_user_variant', { 'projects.slug': slug })
+      .then(splitVariants =>
+        splitVariants.data.map((splitVariant) => {
         const split = new Split(splitVariant);
         this.splits[split.key] = split;
       }))
