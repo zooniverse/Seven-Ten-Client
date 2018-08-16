@@ -5,11 +5,14 @@ class Split {
   static load(slug) {
     this.clear();
     return Client.current().findAll('split_user_variant', { 'projects.slug': slug })
-      .then(splitVariants =>
-        splitVariants.data.map((splitVariant) => {
-        const split = new Split(splitVariant);
-        this.splits[split.key] = split;
-      }))
+      .then((splitVariants) => {
+        if (splitVariants && splitVariants.data && splitVariants.data.length > 0) {
+          splitVariants.data.forEach((splitVariant) => {
+            const split = new Split(splitVariant);
+            this.splits[split.key] = split;
+          });
+        }
+      })
       .then(() => this.splits);
   }
 

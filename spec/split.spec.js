@@ -8,7 +8,7 @@ describe('Split', () => {
   const split = new Split(splitUserVariant);
 
   let splitFinder = () => {
-    return Promise.resolve(serverResponse);
+    return Promise.resolve({ data: serverResponse });
   };
 
   let clientFind = spy(splitFinder);
@@ -28,9 +28,7 @@ describe('Split', () => {
   describe('.load', () => {
     it('should request the splits', () => {
       Split.load('project/slug');
-      expect(clientFind).to.have.been.called.once.with({
-        filter: {'projects.slug': 'project/slug'}
-      });
+      expect(clientFind).to.have.been.called.once.with({ 'projects.slug': 'project/slug' });
     });
 
     it('should create the splits', (done) => {
