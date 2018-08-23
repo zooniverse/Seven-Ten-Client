@@ -25,12 +25,14 @@ class Client extends JsonApi {
     });
 
     this.define('split', {
+      created_at: '',
       name: '',
       key: '',
       state: '',
       metric_types: [],
       starts_at: '',
       ends_at: '',
+      project_id: 0,
       project: {
         jsonApi: 'hasOne',
         type: 'project'
@@ -38,7 +40,8 @@ class Client extends JsonApi {
       variants: {
         jsonApi: 'hasMany',
         type: 'variant'
-      }
+      },
+      updated_at: ''
     });
 
     this.define('variant', {
@@ -48,7 +51,8 @@ class Client extends JsonApi {
       split: {
         jsonApi: 'hasOne',
         type: 'split'
-      }
+      },
+      split_id: 0
     });
 
     this.define('split_user_variant', {

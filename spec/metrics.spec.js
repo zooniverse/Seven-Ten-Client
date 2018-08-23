@@ -26,7 +26,7 @@ describe('Metrics', () => {
     describe('.create', () => {
       it('should create the metric', () => {
         ClassificationCreatedMetric.create(split, classification);
-        expect(clientCreate).to.have.been.called.once().with({
+        expect(clientCreate).to.have.been.called.once.with({
           key: 'classification_created',
           value: {
             classification_id: '456'
@@ -41,7 +41,7 @@ describe('Metrics', () => {
     describe('.create', () => {
       it('should create the metric', () => {
         ClassifierVisitedMetric.create(split);
-        expect(clientCreate).to.have.been.called.once().with({
+        expect(clientCreate).to.have.been.called.once.with({
           key: 'classifier_visited',
           value: {},
           split_user_variant_id: '123'

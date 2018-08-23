@@ -12,12 +12,12 @@ describe('<TextSplit />', () => {
   context('creating the element', () => {
     it('should default to a span element', () => {
       const wrapper = textSplit();
-      expect(wrapper.node.type).to.equal('span');
+      expect(wrapper.type()).to.equal('span');
     });
 
     it('should accept a custom type', () => {
       const wrapper = textSplit({ elementType: 'h1' });
-      expect(wrapper.node.type).to.equal('h1');
+      expect(wrapper.type()).to.equal('h1');
     });
   });
 
