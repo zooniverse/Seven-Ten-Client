@@ -4,7 +4,7 @@ import { ClassificationCreatedMetric, ClassifierVisitedMetric } from './metrics'
 class Split {
   static load(slug) {
     this.clear();
-    return Client.current().findAll('split_user_variant', { 'projects.slug': slug })
+    return Client.current().findAll('split_user_variant', { filter: { 'projects.slug': slug }})
       .then((splitVariants) => {
         if (splitVariants && splitVariants.data && splitVariants.data.length > 0) {
           splitVariants.data.forEach((splitVariant) => {
