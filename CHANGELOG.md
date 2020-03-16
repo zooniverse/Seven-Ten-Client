@@ -1,5 +1,8 @@
 # Change Log
 
+## [v3.4.3](https://github.com/zooniverse/Seven-Ten-Client/tree/v3.4.3) (2020-03-16)
+[Full Changelog](https://github.com/zooniverse/Seven-Ten-Client/compare/v3.4.2...v3.4.3)
+
 ## [v3.4.2](https://github.com/zooniverse/Seven-Ten-Client/tree/v3.4.2) (2020-03-16)
 [Full Changelog](https://github.com/zooniverse/Seven-Ten-Client/compare/v3.4.1...v3.4.2)
 
