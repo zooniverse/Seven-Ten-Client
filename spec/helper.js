@@ -2,7 +2,7 @@ import React from 'react';
 import chai from 'chai';
 import spy from 'chai-spies';
 import Enzyme, { mount, shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-15';
+import Adapter from 'enzyme-adapter-react-16';
 import { JSDOM } from 'jsdom';
 
 Enzyme.configure({
